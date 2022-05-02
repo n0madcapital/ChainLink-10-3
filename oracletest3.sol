@@ -6,12 +6,10 @@ import "@chainlink/contracts/src/v0.6/vendor/SafeMathChainlink.sol";
 contract transfer {
     using SafeMathChainlink for uint256;
     address payable public owner;
-    uint256 public startTime;
     uint256 public balance;
 
     constructor() public { //will be executed whenever the contract is deployed
         owner = 0x31B98D14007bDEe637298086988A0bBd31184523;
-        startTime = block.timestamp;
     }
     function fund() public payable{
         balance += msg.value/10**16;
